@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Получение QR-кода на посещение общественного места в Москве</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="code">
+            <div id="qr__code">
+            </div>
+        </div>
+
+        <div class="certificate__number">
+            Номер сертификата:
+            <span>
+                991ET2HHE4HH
+            </span>
+        </div>
+        <div class="result">
+            <h1 class="result__title">
+                ПЦР-тест отрицательный
+            </h1>
+        </div>
+        <div class="status">
+            <span class="status-result">
+                Действителен
+            </span>
+        </div>
+        <div class="informations">
+            <div class="informations__title">
+                <span>Сведения о заявителе:</span>
+            </div>
+            <h4 class="name">
+
+                М**** И***** Р*********
+            
+            </h4>
+            <h4 class="date__birth">
+                Дата рождения: 14 декабря
+            </h4>
+            <h4 class="validity">
+                Срок действия: 02.01.2022 16:50
+            </h4>
+        </div>
+        <div class="for__print">
+            <a href="print.pdf" class="for__print-link">
+                <span class="link__content">Версия для печати</span>
+            </a>
+        </div>
+        <div class="apple__wallet">
+            <a href="https://www.apple.com/wallet/">
+                <img src="images/apple-wallet.png" alt="">
+            </a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.3/qrcode.min.js"></script>
+    <script>
+        let text = 'https://www.youtube.com/htmllabru';
+
+        let typeNumber = 3;
+        let errorLevel = 'M';
+        let qrDiv = document.getElementById('qr__code');
+
+        let qr1 = qrcode(typeNumber, errorLevel);
+
+        qr1.addData(text);
+        qr1.make();
+        //qrDiv.innerHTML += qr1.createImgTag(8,10);
+        qrDiv.innerHTML += qr1.createSvgTag(8, 10);
+    </script>
+</body>
+
+</html>
